@@ -1,0 +1,26 @@
+<div class="main">
+    <a href="/" class="backBtn">HOME</a>
+    <div class="videoPanel">
+        <video id="videoContainer" width="800" height="450" controls autoplay>
+            <source src="trailers/science fiction/black_panther.mp4" type="video/mp4">
+        </video>    
+    </div>
+    {{#each videoData}}
+        <div class="infoPanel">
+            <div class="trailer">
+                <h4>TRAILER (Click Image)</h4>
+                <img id="{{video_trailer}}" class="thumbnails" src="{{ video_cover }}" alt="{{video_title}}" />
+            </div>            
+            <div class="intro" id="{{video_trailer}}Intro">
+                <h4>{{ video_title }}</h4>
+                <div>{{ video_desc }}</div>
+                <h5>Review</h5>
+                <p>{{ video_rating }}</p>
+                <div>{{ video_review }}</div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+  {{#if kidsmode}}
+    <link rel="stylesheet" href="/stylesheets/kids.css">
+  {{/if}}
